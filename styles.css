@@ -1,1 +1,192 @@
-@import './reset.css'
+@import './reset.css';
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;300;400;500;700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E5E5E5;
+    font-family: "Roboto";
+}
+
+.topo{
+    width: 100%;
+    height: 89px;
+    background-color: #404EED;
+    display:flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+.conteudo{
+    width:100%;
+    height: calc(100vh - 89px);
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+}
+
+.conteudo_topo{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.conteudo_esquerda{
+    /* margin-left: calc((100vw - 1098px)*0.4);
+    margin-right:calc((100vw - 1098px)*0.6); */
+    justify-content: center;
+    align-items: center;
+}
+
+.lista_modelos{
+    margin-top: 40px;
+    width:428px;
+    /* display:flex; */
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+.modelo_linha{
+    width:100%;
+    height:165px;
+    padding: 0px 20px 30px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.modelo{
+    width:100px;
+    height:100px;
+    background: #F2F2F2;
+    border: 0.5px solid #C4C4C4;
+    border-radius: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo_modelos{
+    margin-left: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+} 
+
+.modelo_legenda{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color:#232323;
+    text-align: center;
+}
+
+.modelo img{
+    width: 75%;
+    height: 75%;
+}
+
+.busca {
+    display: flex;
+    align-items: left;
+}
+
+.busca > input {
+    margin: 10px 16px 10px 16px;
+    width: 396px;
+    height: 40px;
+    background: #F2F2F2;
+    border-radius: 10px;
+}
+
+.busca > input::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #818181;
+}
+
+.button{
+    width: 398px;
+    height: 40px;
+    background: #C4C4C4;
+    border-radius: 10px;
+    margin: 10px 15px 10px 15px;
+}
+
+.button > p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FCFCFC;
+}
+
+.imagem_direita{
+    width: 670px;
+    height: 785px;
+    margin-left: calc((100vw - 1098px)*0.72);
+}
+
+.imagem_direita>img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.lista_pedidos{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    padding: 0px 100px 0px 100px;
+    background: #F2F2F2;
+}
+
+.pedido{
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin: 0px 8px 0px 8px;
+    width:200px;
+    height:236px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+}
+
+.pedido_legenda{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #232323;
+    text-align: center;
+}
+
+.titulo_pedidos{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left: 8px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: left;
+    color: #232323;
+}
+
+@media (max-width: 1098px) {
+    .imagem_direita {
+      display: none;
+    }
+}
+
+/* .hide_div{
+    display: none;
+} */
