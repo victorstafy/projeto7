@@ -202,5 +202,9 @@ body {
     .conteudo_esquerda{
         margin-left: "";
     }
+    .titulo_pedidos{
+        margin-left: "";
+        text-align: center;
+    }
 }
 

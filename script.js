@@ -128,11 +128,11 @@ function write_recent_requests(response){
     prev_request_div=document.querySelector(".lista_pedidos");
     prev_request_div.innerHTML="";
     for (let i=response.data.length-n_last_request; i<response.data.length; i++){
-        create_request_div(prev_request_div,response.data[i]);
+        create_request_div(prev_request_div,response.data[i],i);
     }
 }
 
-function create_request_div(parent_div,request_object){
+function create_request_div(parent_div,request_object,i){
 
     let div_id=request_object.id;
 
@@ -144,6 +144,9 @@ function create_request_div(parent_div,request_object){
     let subtitle=request_object.owner;
  
     div_id=[model,neck,material].join('_');
+    if (i===0){
+        parent_div.innerHTML+=`<div class="titulo_pedidos"> Ultimos pedidos</div>`;
+    }
     parent_div.innerHTML+=`<div class='pedido_legenda' id=${div_id}  onclick=confirm_request(this)>
         <div class='pedido'>
             <img src=${img_src}>
