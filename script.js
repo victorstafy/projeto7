@@ -54,7 +54,7 @@ function select_item3(element){
 
 function button_activate(){
     el_finish=document.querySelector(".button");
-    if (selecao_at_1!==0 && selecao_at_2!==0 && selecao_at_3!==0){
+    if (selecao_at_1!==0 && selecao_at_2!==0 && selecao_at_3!==0 && get_user_image()!==""){
         el_finish.style.background='#404EED'; 
         el_finish.disabled=false;
     }
@@ -89,14 +89,12 @@ function create_object(){
         "owner": nome,
         "author":nome,
     };
-    console.log(cloth_model)
     return cloth_model
 }
 
 
 function post_object(cloth_object) {
     const promise = axios.post(urlAPI, cloth_object);
-    console.log(cloth_object)
     promise.then(wite_request);
     promise.catch(show_error)
 }
@@ -108,7 +106,7 @@ function confirm_purchase(){
 
 function wite_request(response){
     if (response.status===422){
-        alert("Ops, não conseguimos processar sua encomenda!22")
+        alert("Ops, não conseguimos processar sua encomenda!")
     }
     else if (response.status===201){
         alert("Compra confirmada!")
@@ -146,7 +144,6 @@ function create_request_div(parent_div,request_object){
     let subtitle=request_object.owner;
  
     div_id=[model,neck,material].join('_');
-    console.log(div_id)
     parent_div.innerHTML+=`<div class='pedido_legenda' id=${div_id}  onclick=confirm_request(this)>
         <div class='pedido'>
             <img src=${img_src}>
@@ -156,7 +153,6 @@ function create_request_div(parent_div,request_object){
 }
 
 function confirm_request(element){
-    console.log(element);
     let id_info=element.id;
     let id_info_array=id_info.split('_'); // array [model,neck,material]
     let author=element.lastChild.textContent
@@ -164,7 +160,6 @@ function confirm_request(element){
     let img_src=element.querySelector("img").src
     
     user_confirmation=confirm("Você quer mesmo este item?");
-    console.log(id_info_array)
     if (user_confirmation){
         let cloth_model={
             "model": id_info_array[0] ,
@@ -174,7 +169,6 @@ function confirm_request(element){
             "owner": nome,
             "author":author,
         };
-        console.log(cloth_model)
         post_object(cloth_model)
     }
 
